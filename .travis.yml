@@ -14,14 +14,13 @@ env:
     - GOOGLE_APPLICATION_CREDENTIALS="${PWD}/client-secret.json"
     - CLUSTER_NAME=backend-cluster
 before_install:
-  - openssl aes-256-cbk -K $encrypted_142535234c_key -iv $encrypted_12323423423440c_in -in client-secret.json.
+- openssl aes-256-cbk -K $encrypted_142535234c_key -iv $encrypted_12323423423440c_in -in client-secret.json.
   - ./gcloud-sdk-install.sh
   - source /home/travis/.bashrc
   - ./gcloud-sdk-configure.sh
-  install: true
+install: true
 before_script:
   - ./image-prepare.sh $FULL_IMAGE_NAME
   - ./image-push.sh $FULL_IMAGE_NAME
 script:
   - ./gcloud-select-cluster.sh $CLUSTER_NAME
-  #- ./k8s-run-mysql.sh ''
