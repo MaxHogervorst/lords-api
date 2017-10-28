@@ -11,18 +11,7 @@ jobs:
 
       auth:
           #Put the contents of keyfile.json into an environment variable for the build called GCR_CREDS, which is then passed in.
-            username: {
-                        "type": "service_account",
-                        "project_id": "gsrc-lords",
-                        "private_key_id": "03b7ea80fe0f6cda6a672654c14316a612c2c7e7",
-                        "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDJNvBXD/6HGo+y\nwQQb3CJBvGdB6iaVLf+F1rV0Jx2QI63lSGTa+BrdO+kEyc9yiWQZwcSI8BWIzKGh\nXhbRn+v2tcsjAu0DWoaeM1onMNStzrs4ksKDrhwUZFI9aG5JSThlMZRkuRjQImec\nAvLdtk8h4nY+7GMyJyb2hTo3iGSM6d2frL8ZMgYFawhHqiusKQHiQ1/SqC+IZMXG\n13MGmYCZVg7mT8YvzyRv2ezMQyugy5Sw/sKRhaHXuW4QNeRFJISnjfX964tqkZAQ\n+NGg1FvvAJqgy1cOISV/Dkn5TPSCIdLa8OFOn4fzPtpfQ8XU4LL8h6R1LY8cwZ1J\nEDWw76WlAgMBAAECggEAJ8C0pYK5rs/61V5IVUe9td6GyPE9e6oZikPj2AWVU+GU\nrNCLam5rgktgi0tisnZ94g/T6BkErCD/is23tOUDPZvnfOyKTmgPYghztnvxfMAz\n4WavSsw2bHnwfITaCx0N6QItVuPxyMcPULWNbWukASYIZgCWTXWKP1iNaqTF9sew\nqa2zgtfaNTnwKNUQPDMnun4xbwOMyhUv5nQQ9SmOm8jxRUDbKMMsbp1fSiKltqYu\nra7y4A4lM0ZxwpE12DAUh2O/dkE2E6P5dSmzBlzpqGDkXjpXm/nw2dxtSuh+QsWh\nfxcAGKjEcnj4AxDB5Gzk+V4VTwV6lTsrJ5YyY+NheQKBgQDv7uZ40Z2ZRuliJXM5\ncz9szxv6xgKnAvgR3kziIPdSN7UjcgK1vSpsstV5pw2MAXw2lrnpZ0/cMFGXDIli\nOZ2LPjM++K9J3+OGBRxsVYPdNvrqVCedyFpuxzUwBOe0Kn2bj4/VQUikLeC9fTZ0\nbIFWZM8OLjYY/u6/6RPOgrU67QKBgQDWsEw4OJNhfM6QPGrvSneMzqp/dJjX/Hxb\nfwANOOv9IgvnWkxz+0ZPAGYFO+EJtPPJwzifjMMV9qhtu/8vdxylss0QHzUF281r\niIYX1kgWLgEd0+Of1vqpnQbvK/uvvb14GNZp4X+J1FEWpjehZAv02ZRmtEn7VaY2\nYyrNjBlmmQKBgQCTR52XymwoW3wFcCGjwVfMjfGJ5SRZqpvmNAQTxtKqWGHLiT+a\nmazCHqCl1WKeb4b0517lpDJEYjCjPOHUNrO7don0fKj0+wbqDJce9PtFvmsVjmTn\nGMZSO9wtRsWINZD2/Y/4AuP5S+QpzQOxQa2+/5CODtXMUCj0CrnKyTdAHQKBgQCu\nnlyQSewOGg6FIK81jJMqcxoYawS6gIHBhc3L82V20Y9vEHIoz9NDBKb2UNrcI1M6\n40+V7k7q+WHLR2Lq/23MlF7YYxmkd0Bg2319u+uMJsT/ts1ov9nHxZHTTSn8qk6G\ndWVIX4J137xIuM98tLxI3gQneTLHe8WibQxufSpX2QKBgQCht7/qZP+q2Hax2ast\nM/CZqWSJWyokeXDV6WNrkt7vJcbbZwdNbgC99XMpIWU3KdSTBZMgokrCurkGsfRr\nHuSkUxzeM6EQYMSXllvmmucLH3JYNINSguohKYYgLFXeAChgmCG8gDPaYYuRWn9f\ny2jbtE0Xi5E0vmZDjHLHmR8p1A==\n-----END PRIVATE KEY-----\n",
-                        "client_email": "763744110904-compute@developer.gserviceaccount.com",
-                        "client_id": "103872066095339012283",
-                        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-                        "token_uri": "https://accounts.google.com/o/oauth2/token",
-                        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-                        "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/763744110904-compute%40developer.gserviceaccount.com"
-                      }
+            username: $google_api
             password: $GOOGLE_AUTH
         - steps:
            # ...
