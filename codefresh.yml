@@ -7,11 +7,11 @@ steps:
     image_name: lords
     tag: '${{CF_BRANCH}}'
 
-  push:
-    type: push
-    candidate: ${{build}}
-    tag: ${{CF_BRANCH}}
-    registry: dockerhub
+#  push:
+#    type: push
+#    candidate: ${{build}}
+#    tag: ${{CF_BRANCH}}
+#    registry: dockerhub
 
   deploy_to_kubernetes:
     image: codefresh/cf-deploy-kubernetes
