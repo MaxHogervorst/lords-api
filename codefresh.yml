@@ -12,10 +12,10 @@ steps:
     candidate: ${{build}}
     tag: ${{CF_BRANCH}}
 
-  deploy-to-kubernetes:
+  deploy_to_kubernetes:
     image: codefresh/cf-deploy-kubernetes
     tag: latest
-    working-directory: ${{initial-clone}}
+    working_directory: ${{main_clone}}
     commands:
       - /cf-deploy-kubernetes deployment.yml
     environment:
