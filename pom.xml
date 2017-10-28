@@ -68,7 +68,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>main</mainClass>
+                            <mainClass>MainKt</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
