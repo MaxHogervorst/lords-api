@@ -11,6 +11,7 @@ steps:
     type: push
     candidate: ${{build}}
     tag: ${{CF_BRANCH}}
+    registry: dockerhub
 
   deploy_to_kubernetes:
     image: codefresh/cf-deploy-kubernetes
