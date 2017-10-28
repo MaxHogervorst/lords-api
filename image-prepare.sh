@@ -3,7 +3,7 @@
 set -e
 
 # Build jar
-mvn deploy
+mvn clean compile assembly:single
 
 #Build image
 docker build --no-cache=true -t $1 .
