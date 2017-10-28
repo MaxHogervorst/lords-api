@@ -1,0 +1,15 @@
+sudo: required
+language: java
+jdk:
+- oraclejdk8
+services:
+- docker
+env:
+    global:
+    - PATH=$PATH:$HOME/google-cloud-sdk/bin
+    - PROJECT_ID="gsrc-lords"
+    - ZONE="europe-west1-b"
+    - IMAGE_NAME=demo:latest
+    - FULL_IMAGE_NAME=gcr.io/$PROJECT_ID/$IMAGE_NAME
+    - GOOGLE_APPLICATION_CREDENTIALS="${PWD}/client-secret.json"
+    - CLUSTER_NAME=backend-cluster
