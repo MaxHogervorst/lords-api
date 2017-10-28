@@ -3,7 +3,7 @@
 set -e
 
 # Build jar
-gradle clean build
+mvn deploy
 
 #Build image
 docker build --no-cache=true -t $1 .
