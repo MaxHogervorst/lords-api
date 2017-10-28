@@ -9,7 +9,7 @@ env:
     - PATH=$PATH:$HOME/google-cloud-sdk/bin
     - PROJECT_ID="gsrc-lords"
     - ZONE="europe-west1-b"
-    - IMAGE_NAME=lords-api:latest
+    - IMAGE_NAME=lords-api:$TRAVIS_BUILD_NUMBER
     - FULL_IMAGE_NAME=gcr.io/$PROJECT_ID/$IMAGE_NAME
     - GOOGLE_APPLICATION_CREDENTIALS="${PWD}/client-secret.json"
     - CLUSTER_NAME=backend-cluster
