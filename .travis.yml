@@ -17,15 +17,14 @@ before_install:
   openssl aes-256-cbc -K $encrypted_de917ce340da_key -iv $encrypted_de917ce340da_iv -in client-secret.json.enc -out client-secret.json -d
 install: true
 before_script:
-#  - chmod +x gcloud-sdk-instal.sh
-#  - ./gcloud-sdk-install.sh
-#  - source /home/travis/.bashrc
   - chmod +x gcloud-sdk-configure.sh
   - chmod +x image-prepare.sh
   - chmod +x image-push.sh
   - chmod +x gcloud-select-cluster.sh
+  - chmod +x update-image.sh
 script:
   - ./gcloud-sdk-configure.sh
   - ./image-prepare.sh $FULL_IMAGE_NAME
   - ./image-push.sh $FULL_IMAGE_NAME
   - ./gcloud-select-cluster.sh $CLUSTER_NAME
+  - ./update-image.sh FULL_IMAGE_NAME
