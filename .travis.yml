@@ -15,11 +15,16 @@ env:
     - CLUSTER_NAME=backend-cluster
 before_install:
 - openssl aes-256-cbk -K $encrypted_142535234c_key -iv $encrypted_12323423423440c_in -in client-secret.json.
+  - chmod +x gcloud-sdk-instal.sh
   - ./gcloud-sdk-install.sh
   - source /home/travis/.bashrc
+  - chmod +x gcloud-sdk-configure.sh
   - ./gcloud-sdk-configure.sh
 install: true
 before_script:
+  - chmod +x image-prepare.sh
+  - chmod +x image-push.sh
+  - chmod +x gcloud-select-cluster.sh
   - ./image-prepare.sh $FULL_IMAGE_NAME
   - ./image-push.sh $FULL_IMAGE_NAME
 script:
