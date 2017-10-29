@@ -56,5 +56,6 @@
     <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib:1.1.51" level="project" />
     <orderEntry type="library" name="Maven: org.jetbrains:annotations:13.0" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-simple:1.7.25" level="project" />
+    <orderEntry type="library" name="Maven: com.google.appengine:appengine-api-1.0-sdk:1.9.58" level="project" />
   </component>
 </module>
