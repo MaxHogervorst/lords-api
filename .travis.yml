@@ -1,30 +1,10 @@
 sudo: required
 language: java
 jdk:
-  - oraclejdk8
-services:
-  - docker
-env:
-  global:
-    - PATH=$PATH:$HOME/google-cloud-sdk/bin
-    - PROJECT_ID="gsrc-lords"
-    - ZONE="europe-west1-b"
-    - IMAGE_NAME=lords-api:$TRAVIS_BUILD_NUMBER
-    - FULL_IMAGE_NAME=gcr.io/$PROJECT_ID/$IMAGE_NAME
-    - GOOGLE_APPLICATION_CREDENTIALS="${PWD}/client-secret.json"
-    - CLUSTER_NAME=backend-cluster
+- oraclejdk8
+deploy:
+  provider: gae
+  project: gsrc-lords
 before_install:
-  openssl aes-256-cbc -K $encrypted_de917ce340da_key -iv $encrypted_de917ce340da_iv -in client-secret.json.enc -out client-secret.json -d
-install: true
-before_script:
-  - chmod +x gcloud-sdk-configure.sh
-  - chmod +x image-prepare.sh
-  - chmod +x image-push.sh
-  - chmod +x gcloud-select-cluster.sh
-  - chmod +x update-image.sh
-script:
-  - ./gcloud-sdk-configure.sh
-  - ./image-prepare.sh $FULL_IMAGE_NAME
-  - ./image-push.sh $FULL_IMAGE_NAME
-  - ./gcloud-select-cluster.sh $CLUSTER_NAME
-  - ./update-image.sh FULL_IMAGE_NAME
+- openssl aes-256-cbc -K $encrypted_de917ce340da_key -iv $encrypted_de917ce340da_iv
+  -in client-secret.json.enc -out client-secret.json -d
